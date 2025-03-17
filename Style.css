@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing:border-box; /* Significa que ele irá preservar as propriedades da caixa, como a largura */
+}
+
+/* Quando é adicionado * significa que tudo irá receber aquele atributo:
+Exemplo, no body (Abaixo) foi adicionado o * Antes, então tudo o que estiver no Body
+terá a fonte Inter e a cor Branca. Outro exemplo está acima, onde temos * e propriedades
+de margem, padding, e borda, assim, todo o site irá inicar com esses elementos em zero */
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+  */
+
+  /*Posso deixar todo esse código do Background em uma linha única */
+  background: var(--bg-url) no-repeat top center/cover;
+  font-family: "Inter" , sans-serif;
+}
+ 
+:root {
+ --text-color: white;
+ --bg-url: url(./assets/bg-mobile.jpg);
+ --stroke-color: rgba(255, 255, 255, 0.50);
+ --surface-color:rgba(255, 255, 255, 0.10);
+ --highlight-color:rgba(255, 255, 255, 0.20);
+ --toggle-handle: url(./assets/moonstars.svg);
+}
+
+.light {
+--text-color:black;
+--bg-url: url(./assets/bg-mobile-light.jpg);
+--stroke-color: rgba(0, 0, 0, 0.50);
+--surface-color: rgba(0, 0, 0, 0.05);
+--highlight-color:rgba(0, 0, 0, 0.10);
+--toggle-handle: url(./assets/sun.svg);
+}
+
+body * { /* Todos os elementos do Body terão as seguintes características
+  devido o * */
+  font-family: 'inter', sans-serif;
+  color: var(--text-color)
+}
+#conteiner{ /* Propriedadea do ID conteiner */
+width: 360px;
+margin: 56px auto 0px;
+align-items: center;
+justify-content: center;
+}
+
+#profile { /* Propriedades gerais do parágrafo */
+  text-align: center;
+  padding:24px;
+
+}
+
+#profile img { /* Propriedades do ID profile aplicadas a Imagem */
+  width:112px;
+}
+
+#profile p { /* Propriedades do ID profile aplicadas ao parágrafo */
+  font-weight: 500;
+  line-height: 24px;
+  margin-top:8px;
+}
+
+#switch {
+  display: flex;
+  margin:0 auto;
+  justify-content: center;
+  flex-direction: column;
+  position:relative;
+  width:68px;
+}
+#switch button {
+  width:32px;
+  height: 32px;
+  background:white var(--toggle-handle) no-repeat center;
+  border-radius:50%;
+  border:0;
+  position:absolute;
+}
+
+#switch span{
+  width:64px;
+  height:24px;
+  background:var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter:blur(4px);
+  border-radius:9999px;
+}
+
+.light #switch button{
+  right:0;
+  left:initial;
+}
+/* Lista de Link's */
+ ul { /*Contêiner Pai de tudo - Prioridade 1) */
+  list-style:none;
+  gap:16px;
+  flex-direction:column;
+  display:flex;
+  padding:24px 0px;
+ }
+
+ ul li { /* Contêiner Filho - Prioridade 2 - Caixa do link) */
+  Border: 1px solid var(--stroke-color);
+  text-align:center;
+  align-items: center;
+  padding:16px 24px;
+  border-radius:8px;
+  background:var(--surface-color);
+  backdrop-filter:blur(4px);
+  transition: background 0.5s;
+ }
+
+ ul li a{ /* Link que está dentro da caixa */
+  text-decoration:none;
+  font-weight: 500;
+ }
+
+  ul li:hover{
+    backdrop-filter:blur(4x);
+    border:2px solid var(--stroke-color);
+    background:rgba(255,255,255,0.05);
+  }
+
+  /* Links Sociais */
+  #social-links {
+    display:flex;
+    padding:24px;
+    font-size:24px;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    
+  }
+
+  #social-links a:hover{
+    Background:var(--highlight-color);
+    padding:16px;
+    border-radius:50%;
+    transition: background 0.5s;
+  }
+#social-links a{
+  Display:Flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+}
+
+footer{
+  padding:24px 0;
+  text-align:center;
+  font-size:14px;
+}
+
