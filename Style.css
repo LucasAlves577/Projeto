@@ -46,7 +46,8 @@ body * { /* Todos os elementos do Body terão as seguintes características
   color: var(--text-color)
 }
 #conteiner{ /* Propriedadea do ID conteiner */
-width: 360px;
+width: 100%;
+max-width: 588px;
 margin: 56px auto 0px;
 align-items: center;
 justify-content: center;
