@@ -20,6 +20,7 @@ body {
   /*Posso deixar todo esse código do Background em uma linha única */
   background: var(--bg-url) no-repeat top center/cover;
   font-family: "Inter" , sans-serif;
+  height:100vh;
 }
  
 :root {
@@ -84,6 +85,7 @@ justify-content: center;
   border-radius:50%;
   border:0;
   position:absolute;
+  z-index: 100;
 }
 
 #switch span{
@@ -160,3 +162,14 @@ footer{
   font-size:14px;
 }
 
+/* Media queries */
+@media (min-width:700px) {
+  :root {
+      --bg-url: url(./assets/bg-desktop.png)
+  }
+
+  .light {
+
+    --bg-url: url(./assets/bg-desktop-light.jpg)
+  }
+}
