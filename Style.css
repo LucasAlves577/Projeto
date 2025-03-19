@@ -86,6 +86,7 @@ justify-content: center;
   border:0;
   position:absolute;
   z-index: 100;
+  animation: slide-back 0.4s forwards;
 }
 
 #switch span{
@@ -98,8 +99,7 @@ justify-content: center;
 }
 
 .light #switch button{
-  right:0;
-  left:initial;
+animation: slide-in 0.4s forwards;
 }
 /* Lista de Link's */
  ul { /*Contêiner Pai de tudo - Prioridade 1) */
@@ -109,7 +109,10 @@ justify-content: center;
   display:flex;
   padding:24px 0px;
  }
-
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+  transition: outline 0.5s;
+}
  ul li { /* Contêiner Filho - Prioridade 2 - Caixa do link) */
   Border: 1px solid var(--stroke-color);
   text-align:center;
@@ -171,5 +174,24 @@ footer{
   .light {
 
     --bg-url: url(./assets/bg-desktop-light.jpg)
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left:0;
+  }
+  to {
+    left:50%;
+  }
+
+}
+
+@keyframes slide-back {
+  from{
+    left:50%;
+  }
+  to{
+    left:0;
   }
 }
